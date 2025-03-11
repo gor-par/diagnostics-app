@@ -4,8 +4,13 @@ const port = 8080;
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send('GET well received');
+app.get("/elenchuk", (req, res) => {
+  res.send("barev arev");
+});
+
+app.get("/:message", (req, res) => {
+  const message = req.params.message;
+  res.send(message);
 });
 
 app.listen(port, () => {
